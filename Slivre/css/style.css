@@ -1,0 +1,133 @@
+/* =========================================
+   IMPORTAÇÃO DE FONTES
+   ========================================= */
+@import url('https://googleapis.com');
+
+/* =========================================
+   RESET BÁSICO E GLOBAIS
+   ========================================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600;
+  color: #5a4b5c;
+  line-height: 1.6;
+  background-color: #fff0f5;
+  background-image: radial-gradient(#fff5f8 20%, transparent 20%);
+  background-size: 30px 30px;
+  padding: 40px;
+  min-height: 100vh;
+  text-align: left;
+}
+
+br { 
+  display: none; 
+}
+
+/* =========================================
+   PARÁGRAFO DE INTRODUÇÃO
+   ========================================= */
+body > p:first-of-type {
+  font-weight: 700;
+  font-size: 1.12em;
+  text-align: center;
+  background: #ffffff;
+  color: inherit;
+  border: 2px dashed #ffb6c1;
+  padding: 25px;
+  border-radius: 24px;
+  margin-bottom: 50px;
+  max-width: 750px;
+  box-shadow: 0 8px 25px rgba(255, 182, 193, 0.18);
+  display: block;
+}
+
+/* =========================================
+   CAIXA QUADRADA PRINCIPAL
+   ========================================= */
+h3 + p {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 0.95em;
+  text-align: justify;
+  background: rgba(255, 255, 255, 0.95);
+  display: inline-block;
+  vertical-align: top;
+  width: 280px;
+  aspect-ratio: 1 / 1;
+  margin-right: 25px;
+  margin-bottom: 40px;
+  border-radius: 24px;
+  border: 2px solid #ffe4e1;
+  box-shadow: 0 8px 20px rgba(255, 182, 193, 0.15);
+  padding: 75px 25px 25px 25px;
+  position: relative;
+  overflow-y: auto;
+}
+
+/* =========================================
+   TÍTULO DENTRO DA CAIXA
+   ========================================= */
+h3 {
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 700;
+  font-size: 1.10em;
+  color: #db7093;
+  background: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 280px;
+  height: auto;
+  margin: 0;
+  padding: 25px 25px 0 25px;
+  border: none;
+  display: block;
+  z-index: 10;
+  pointer-events: none;
+}
+
+h3::first-letter {
+  color: #ff69b4;
+  font-size: 1.2em;
+}
+
+/* =========================================
+   BARRAS DE ROLAGEM (SCROLLBARS)
+   ========================================= */
+/* Scrollbar interna das caixinhas */
+h3 + p::-webkit-scrollbar {
+  width: 5px;
+}
+
+h3 + p::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+h3 + p::-webkit-scrollbar-thumb {
+  background: #ffb6c1;
+  border-radius: 10px;
+}
+
+/* Scrollbar global da página */
+::-webkit-scrollbar {
+  height: 10px;
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fff0f5;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ffb6c1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #db7093;
+}
