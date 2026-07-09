@@ -1,133 +1,155 @@
-/* =========================================
-   IMPORTAÇÃO DE FONTES
-   ========================================= */
+/* Importação de fontes fofas e legíveis */
 @import url('https://googleapis.com');
 
-/* =========================================
-   RESET BÁSICO E GLOBAIS
-   ========================================= */
+/* Configurações Globais */
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  font-family: 'Quicksand', sans-serif;
-  font-weight: 600;
-  color: #5a4b5c;
-  line-height: 1.6;
-  background-color: #fff0f5;
-  background-image: radial-gradient(#fff5f8 20%, transparent 20%);
-  background-size: 30px 30px;
-  padding: 40px;
-  min-height: 100vh;
-  text-align: left;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: radial-gradient(circle, #fdf8fa 60%, #faedf2 100%);
+    color: #4a3b3d;
+    min-height: 100vh;
+    padding: 60px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-br { 
-  display: none; 
+/* Esconde o <br> do HTML original para não dar quebras duplas erradas */
+br {
+    display: none;
 }
 
-/* =========================================
-   PARÁGRAFO DE INTRODUÇÃO
-   ========================================= */
-body > p:first-of-type {
-  font-weight: 700;
-  font-size: 1.12em;
-  text-align: center;
-  background: #ffffff;
-  color: inherit;
-  border: 2px dashed #ffb6c1;
-  padding: 25px;
-  border-radius: 24px;
-  margin-bottom: 50px;
-  max-width: 750px;
-  box-shadow: 0 8px 25px rgba(255, 182, 193, 0.18);
-  display: block;
+/* Estilização das Imagens (Moldura Polaroid) */
+img {
+    max-width: 100%;
+    height: auto;
+    background-color: #ffffff;
+    padding: 12px;
+    border-radius: 20px;
+    border: 2px solid #f5dee6;
+    box-shadow: 0 8px 24px rgba(230, 168, 192, 0.2);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.15);
 }
 
-/* =========================================
-   CAIXA QUADRADA PRINCIPAL
-   ========================================= */
-h3 + p {
-  font-family: 'Quicksand', sans-serif;
-  font-size: 0.95em;
-  text-align: justify;
-  background: rgba(255, 255, 255, 0.95);
-  display: inline-block;
-  vertical-align: top;
-  width: 280px;
-  aspect-ratio: 1 / 1;
-  margin-right: 25px;
-  margin-bottom: 40px;
-  border-radius: 24px;
-  border: 2px solid #ffe4e1;
-  box-shadow: 0 8px 20px rgba(255, 182, 193, 0.15);
-  padding: 75px 25px 25px 25px;
-  position: relative;
-  overflow-y: auto;
+img:hover {
+    transform: scale(1.03) rotate(-1deg);
+    border-color: #ffb3c6;
+    box-shadow: 0 12px 32px rgba(230, 168, 192, 0.4);
 }
 
-/* =========================================
-   TÍTULO DENTRO DA CAIXA
-   ========================================= */
+img:first-of-type {
+    max-width: 620px;
+    margin-bottom: 50px;
+}
+
+img:last-of-type {
+    max-width: 340px;
+    margin-top: 50px;
+}
+
+/* Container do Conteúdo */
+article {
+    max-width: 760px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 45px; /* Espaço generoso entre as seções principais */
+}
+
+/* Balão de Destaque da Introdução */
+article > p:first-of-type {
+    font-family: 'Comfortaa', cursive;
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: #c93b67;
+    font-weight: 700;
+    text-align: center;
+    background-color: #fff0f5;
+    padding: 25px;
+    border-radius: 24px;
+    border: 2px dashed #ffccd5;
+    box-shadow: inset 0 0 12px rgba(255, 255, 255, 0.8);
+    margin-bottom: 10px;
+}
+
+/* Títulos em Formato de Tag */
 h3 {
-  font-family: 'Fredoka', sans-serif;
-  font-weight: 700;
-  font-size: 1.10em;
-  color: #db7093;
-  background: transparent;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 280px;
-  height: auto;
-  margin: 0;
-  padding: 25px 25px 0 25px;
-  border: none;
-  display: block;
-  z-index: 10;
-  pointer-events: none;
+    font-family: 'Comfortaa', cursive;
+    font-size: 1.35rem;
+    color: #ffffff;
+    background: linear-gradient(135deg, #ff758f 0%, #ff8fa3 100%);
+    padding: 12px 24px;
+    border-radius: 14px 14px 14px 4px;
+    width: fit-content;
+    box-shadow: 0 4px 15px rgba(255, 117, 143, 0.25);
+    margin-bottom: 15px; /* Garante espaço abaixo do título principal */
+    position: relative;
 }
 
-h3::first-letter {
-  color: #ff69b4;
-  font-size: 1.2em;
+h3::after {
+    content: '✦';
+    position: absolute;
+    right: -25px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #b58dfa;
+    font-size: 1.2rem;
 }
 
-/* =========================================
-   BARRAS DE ROLAGEM (SCROLLBARS)
-   ========================================= */
-/* Scrollbar interna das caixinhas */
-h3 + p::-webkit-scrollbar {
-  width: 5px;
+/* O SEGREDO DO ESPAÇAMENTO INTERNO: 
+   Transforma o texto corrido do parágrafo em blocos espaçados */
+p {
+    font-size: 1.08rem;
+    line-height: 1.9; /* Aumenta o espaço entre as linhas de texto */
+    color: #5c4d50;
+    padding-left: 20px;
+    border-left: 3px solid #ffe3ec;
+    
+    /* Ativa a quebra automática de blocos baseada nos pontos finais do HTML */
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Cria um espaço perfeito de 20px entre cada sub-tópico */
 }
 
-h3 + p::-webkit-scrollbar-track {
-  background: transparent;
+/* Destaca automaticamente os sub-tópicos (como "Despejo e Desespero:", "A Descoberta:") 
+   que estão grudados no meio do seu texto */
+p::first-line {
+    font-weight: 500;
+    color: #3b2d30;
 }
 
-h3 + p::-webkit-scrollbar-thumb {
-  background: #ffb6c1;
-  border-radius: 10px;
+/* Customização da seleção de texto */
+::selection {
+    background-color: #ffccd5;
+    color: #a3264c;
 }
 
-/* Scrollbar global da página */
-::-webkit-scrollbar {
-  height: 10px;
-  width: 10px;
-}
+/* Responsividade para Celulares */
+@media (max-width: 768px) {
+    body {
+        padding: 40px 15px;
+    }
+    
+    article {
+        gap: 35px;
+    }
 
-::-webkit-scrollbar-track {
-  background: #fff0f5;
-}
+    h3 {
+        font-size: 1.15rem;
+        padding: 10px 18px;
+    }
 
-::-webkit-scrollbar-thumb {
-  background: #ffb6c1;
-  border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #db7093;
+    h3::after {
+        display: none;
+    }
+    
+    p {
+        padding-left: 15px;
+        gap: 15px;
+    }
 }
